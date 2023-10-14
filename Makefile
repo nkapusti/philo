@@ -22,25 +22,26 @@ OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
 INC = -I ./includes/
 
 all: $(NAME)
-
+				
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
-	@echo "Done!"
+	@echo "Done!🥳"
 
 clean:
 	@rm -rf $(OBJ_PATH)
-	@echo "Object files removed"
+	@echo "Objects removed!👍"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Philo deleted!😱"
 
 re: fclean all
 
 run: re
-	./philo 5 200 210 200 
+	./philo 5 200 120 100 
 
 .PHONY: all re clean fclean
