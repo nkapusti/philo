@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:25:49 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/13 20:12:43 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:10:07 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static bool	contains_only_digits(char *str)
 	return (true);
 }
 
-int	integer_atoi(char *str)
+int	int_atoi(char *str)
 {
 	unsigned long long int	nb;
 	int						i;
@@ -42,7 +42,7 @@ int	integer_atoi(char *str)
 	return ((int)nb);
 }
 
-bool	is_valid_input(int argc, char **argv)
+bool	valid_input(int argc, char **argv)
 {
 	int	i;
 	int	nb;
@@ -52,7 +52,7 @@ bool	is_valid_input(int argc, char **argv)
 	{
 		if (!contains_only_digits(argv[i]))
 			return (msg(STR_ERR_INPUT_DIGIT, argv[i], false));
-		nb = integer_atoi(argv[i]);
+		nb = int_atoi(argv[i]);
 		if (i == 1 && (nb <= 0 || nb > MAX_PHILOS))
 			return (msg(STR_ERR_INPUT_POFLOW, STR_MAX_PHILOS, false));
 		if (i != 1 && nb == -1)

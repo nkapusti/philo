@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:25:34 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/13 20:12:43 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:09:23 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	print_status(t_philo *philo, char *str)
 void	write_status(t_philo *philo, bool monitor_report, t_status status)
 {
 	pthread_mutex_lock(&philo->table->write_lock);
-	if (has_simulation_stopped(philo->table) == true && monitor_report == false)
+	if (simulation_stopped(philo->table) == true && monitor_report == false)
 	{
 		pthread_mutex_unlock(&philo->table->write_lock);
 		return ;

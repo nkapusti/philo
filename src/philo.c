@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:26:19 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/13 20:10:45 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:10:07 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int argc, char **argv)
 	table = NULL;
 	if (argc - 1 < 4 || argc - 1 > 5)
 		return (msg(STR_USAGE, NULL, EXIT_FAILURE));
-	if (!is_valid_input(argc, argv))
+	if (!valid_input(argc, argv))
 		return (EXIT_FAILURE);
 	table = init_table(argc, argv, 1);
 	if (!table)

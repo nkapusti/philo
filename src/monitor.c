@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:24:51 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/13 20:12:43 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:09:23 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 static void	set_sim_stop_flag(t_table *table, bool state)
 {
 	pthread_mutex_lock(&table->sim_stop_lock);
-		table->sim_stop = state;
+	table->sim_stop = state;
 	pthread_mutex_unlock(&table->sim_stop_lock);
 }
 
-bool	has_simulation_stopped(t_table *table)
+bool	simulation_stopped(t_table *table)
 {
 	bool	r;
 
@@ -81,7 +81,7 @@ void	*monitor(void *data)
 	if (table->must_eat_count == 0)
 		return (NULL);
 	set_sim_stop_flag(table, false);
-	sim_start_delay(table->start_time);
+	start_delay(table->start_time);
 	while (true)
 	{
 		if (end_condition_reached(table) == true)

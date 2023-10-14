@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:24:34 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/13 20:12:43 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:09:49 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,13 +85,13 @@ t_table	*init_table(int argc, char **argv, int i)
 	table = malloc(sizeof(t_table) * 1);
 	if (!table)
 		return (error_null(STR_ERR_MALLOC, NULL, 0));
-	table->nb_philos = integer_atoi(argv[i++]);
-	table->time_to_die = integer_atoi(argv[i++]);
-	table->time_to_eat = integer_atoi(argv[i++]);
-	table->time_to_sleep = integer_atoi(argv[i++]);
+	table->nb_philos = int_atoi(argv[i++]);
+	table->time_to_die = int_atoi(argv[i++]);
+	table->time_to_eat = int_atoi(argv[i++]);
+	table->time_to_sleep = int_atoi(argv[i++]);
 	table->must_eat_count = -1;
 	if (argc - 1 == 5)
-		table->must_eat_count = integer_atoi(argv[i]);
+		table->must_eat_count = int_atoi(argv[i]);
 	table->philos = init_philosophers(table);
 	if (!table->philos)
 		return (NULL);

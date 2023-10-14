@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:28:36 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/13 20:12:43 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:12:30 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,18 +84,18 @@ void	*philosopher(void *data);
 //time.c
 time_t	get_time_in_ms(void);
 void	philo_sleep(t_table *table, time_t sleep_time);
-void	sim_start_delay(time_t start_time);
+void	start_delay(time_t start_time);
 
 //output.c
 void	write_status(t_philo *philo, bool monitor_report, t_status status);
 
 //monitor.c
 void	*monitor(void *data);
-bool	has_simulation_stopped(t_table *table);
+bool	simulation_stopped(t_table *table);
 
 //parsing.c
-bool	is_valid_input(int argc, char **argv);
-int		integer_atoi(char *str);
+bool	valid_input(int argc, char **argv);
+int		int_atoi(char *str);
 
 //	exit.c
 int		error_failure(char *str, char *details, t_table *table);

@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:26:58 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/13 20:12:43 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:09:23 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	eat_sleep_routine(t_philo *philo)
 	philo->last_meal = get_time_in_ms();
 	pthread_mutex_unlock(&philo->meal_time_lock);
 	philo_sleep(philo->table, philo->table->time_to_eat);
-	if (has_simulation_stopped(philo->table) == false)
+	if (simulation_stopped(philo->table) == false)
 	{
 		pthread_mutex_lock(&philo->meal_time_lock);
 		philo->times_ate += 1;
@@ -75,14 +75,14 @@ void	*philosopher(void *data)
 	pthread_mutex_lock(&philo->meal_time_lock);
 	philo->last_meal = philo->table->start_time;
 	pthread_mutex_unlock(&philo->meal_time_lock);
-	sim_start_delay(philo->table->start_time);
+	start_delay(philo->table->start_time);
 	if (philo->table->time_to_die == 0)
 		return (NULL);
 	if (philo->table->nb_philos == 1)
 		return (alone_philo(philo));
 	else if (philo->id % 2)
 		think_routine(philo, true);
-	while (!has_simulation_stopped(philo->table))
+	while (!simulation_stopped(philo->table))
 	{
 		eat_sleep_routine(philo);
 		think_routine(philo, false);
