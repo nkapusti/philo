@@ -1,12 +1,12 @@
 NAME = philo 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -pthread -fsanitize=thread
+CFLAGS = -Wall -Wextra -Werror -pthread
 
 SRC_PATH = src/
 OBJ_PATH = objs/
 
 SRC = 	philo.c \
-		parsing.c \
+		utils.c \
 		init.c \
 		exit.c \
 		philosopher.c \

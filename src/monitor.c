@@ -82,6 +82,8 @@ void	*monitor(void *data)
 		return (NULL);
 	set_sim_stop_flag(table, false);
 	start_delay(table->start_time);
+	while (get_time_in_ms() < table->start_time)
+		continue ;
 	while (true)
 	{
 		if (end_condition_reached(table) == true)

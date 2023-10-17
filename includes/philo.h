@@ -93,7 +93,7 @@ void	write_status(t_philo *philo, bool monitor_report, t_status status);
 void	*monitor(void *data);
 bool	simulation_stopped(t_table *table);
 
-//parsing.c
+//utils.c
 bool	valid_input(int argc, char **argv);
 int		int_atoi(char *str);
 
