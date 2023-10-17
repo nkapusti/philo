@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:24:34 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/14 15:09:49 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static t_philo	**init_philosophers(t_table *table)
 		philos[i]->table = table;
 		philos[i]->id = i;
 		philos[i]->times_ate = 0;
-		philos[i]->last_meal = get_time_in_ms();
+		philos[i]->last_meal = time_in_ms();
 		assign_forks(philos[i]);
 		i++;
 	}

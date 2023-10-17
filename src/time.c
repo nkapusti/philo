@@ -6,13 +6,13 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:27:20 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/14 15:09:23 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-time_t	get_time_in_ms(void)
+time_t	time_in_ms(void)
 {
 	struct timeval		tv;
 
@@ -24,8 +24,8 @@ void	philo_sleep(t_table *table, time_t sleep_time)
 {
 	time_t	wake_up;
 
-	wake_up = get_time_in_ms() + sleep_time;
-	while (get_time_in_ms() < wake_up)
+	wake_up = time_in_ms() + sleep_time;
+	while (time_in_ms() < wake_up)
 	{
 		if (simulation_stopped(table))
 			break ;
@@ -35,6 +35,6 @@ void	philo_sleep(t_table *table, time_t sleep_time)
 
 void	start_delay(time_t start_time)
 {
-	while (get_time_in_ms() < start_time)
+	while (time_in_ms() < start_time)
 		continue ;
 }

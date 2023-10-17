@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:25:34 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/14 15:09:23 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	print_status(t_philo *philo, char *str)
 {
-	printf("%ld %d %s\n", get_time_in_ms() - philo->table->start_time,
+	printf("%ld %d %s\n", time_in_ms() - philo->table->start_time,
 		philo->id + 1, str);
 }
 

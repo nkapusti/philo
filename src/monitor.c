@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:24:51 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/14 15:09:23 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:25:19 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static bool	kill_philo(t_philo *philo)
 {
 	time_t	time;
 
-	time = get_time_in_ms();
+	time = time_in_ms();
 	if ((time - philo->last_meal) >= philo->table->time_to_die)
 	{
 		set_sim_stop_flag(philo->table, true);
@@ -82,7 +82,7 @@ void	*monitor(void *data)
 		return (NULL);
 	set_sim_stop_flag(table, false);
 	start_delay(table->start_time);
-	while (get_time_in_ms() < table->start_time)
+	while (time_in_ms() < table->start_time)
 		continue ;
 	while (true)
 	{

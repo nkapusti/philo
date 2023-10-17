@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:28:36 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/14 15:12:30 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 # define STR_ERR_INPUT_DIGIT	"%s invalid input: %s: \
 not a valid unsigned integer between 0 and 2147483647.\n"
 # define STR_ERR_INPUT_POFLOW	"%s invalid input: \
-there must be between 1 and %s philosophers.\n"
+must be between 1 and %s philosophers.\n"
 # define STR_ERR_THREAD	"%s error: Could not create thread.\n"
 # define STR_ERR_MALLOC	"%s error: Could not allocate memory.\n"
 # define STR_ERR_MUTEX	"%s error: Could not create mutex.\n"
@@ -82,7 +82,7 @@ t_table	*init_table(int argc, char **argv, int i);
 void	*philosopher(void *data);
 
 //time.c
-time_t	get_time_in_ms(void);
+time_t	time_in_ms(void);
 void	philo_sleep(t_table *table, time_t sleep_time);
 void	start_delay(time_t start_time);
 

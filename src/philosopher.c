@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:26:58 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/14 15:09:23 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	eat_sleep_routine(t_philo *philo)
 	write_status(philo, false, GOT_FORK_2);
 	write_status(philo, false, EATING);
 	pthread_mutex_lock(&philo->meal_time_lock);
-	philo->last_meal = get_time_in_ms();
+	philo->last_meal = time_in_ms();
 	pthread_mutex_unlock(&philo->meal_time_lock);
 	philo_sleep(philo->table, philo->table->time_to_eat);
 	if (simulation_stopped(philo->table) == false)
@@ -41,7 +41,7 @@ static void	think_routine(t_philo *philo, bool silent)
 
 	pthread_mutex_lock(&philo->meal_time_lock);
 	time_to_think = (philo->table->time_to_die
-			- (get_time_in_ms() - philo->last_meal)
+			- (time_in_ms() - philo->last_meal)
 			- philo->table->time_to_eat) / 2;
 	pthread_mutex_unlock(&philo->meal_time_lock);
 	if (time_to_think < 0)

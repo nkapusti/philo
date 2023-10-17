@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:26:19 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/14 15:36:31 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static bool	start_simulation(t_table *table)
 {
 	unsigned int	i;
 
-	table->start_time = get_time_in_ms() + (table->nb_philos * 2 * 10);
+	table->start_time = time_in_ms() + (table->nb_philos * 2 * 10);
 	i = 0;
 	while (i < table->nb_philos)
 	{
