@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:27:20 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:27:41 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	philo_sleep(t_table *table, time_t sleep_time)
 	wake_up = time_in_ms() + sleep_time;
 	while (time_in_ms() < wake_up)
 	{
-		if (simulation_stopped(table))
+		if (simulation_end(table))
 			break ;
 		usleep(100);
 	}

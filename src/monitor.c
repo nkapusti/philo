@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:24:51 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/17 18:25:19 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:27:41 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	set_sim_stop_flag(t_table *table, bool state)
 	pthread_mutex_unlock(&table->sim_stop_lock);
 }
 
-bool	simulation_stopped(t_table *table)
+bool	simulation_end(t_table *table)
 {
 	bool	r;
 

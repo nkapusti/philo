@@ -6,11 +6,13 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:24:34 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:54:20 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+/*Inits fork mutexes*/
 
 static pthread_mutex_t	*init_forks(t_table *table)
 {
@@ -29,6 +31,8 @@ static pthread_mutex_t	*init_forks(t_table *table)
 	}
 	return (forks);
 }
+
+/*Assign 2 forks to each philo*/
 
 static void	assign_forks(t_philo *philo)
 {
@@ -66,6 +70,8 @@ static t_philo	**init_philosophers(t_table *table)
 	}
 	return (philos);
 }
+
+/*Inits mutex locks for forks*/
 
 static bool	init_global_mutexes(t_table *table)
 {

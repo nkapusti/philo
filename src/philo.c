@@ -6,11 +6,14 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:26:19 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:41:07 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+/*starts the simulation by creating a thread, 
+one thread for each philosopher. */
 
 static bool	start_simulation(t_table *table)
 {

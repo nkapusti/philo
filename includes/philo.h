@@ -6,7 +6,7 @@
 /*   By: akapusti <akapusti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:28:36 by akapusti          #+#    #+#             */
-/*   Updated: 2023/10/17 18:22:49 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:00:45 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define STR_MAX_PHILOS "250"
 
 # define STR_PROG_NAME	"philo:"
-# define STR_USAGE	"%s usage: ./philo <number_of_philosophers> \
+# define STR_USAGE	"%s please use: ./philo <number_of_philosophers> \
 <time_to_die> <time_to_eat> <time_to_sleep> \
 [number_of_times_each_philosopher_must_eat]\n"
 # define STR_ERR_INPUT_DIGIT	"%s invalid input: %s: \
@@ -91,7 +91,7 @@ void	write_status(t_philo *philo, bool monitor_report, t_status status);
 
 //monitor.c
 void	*monitor(void *data);
-bool	simulation_stopped(t_table *table);
+bool	simulation_end(t_table *table);
 
 //utils.c
 bool	valid_input(int argc, char **argv);
